@@ -1,0 +1,39 @@
+#Screentime metric descriptive statistics
+jaspDescriptives::Descriptives(
+  version = "0.19",
+  formula =  ~ Screentime1Mean + Screentime2Mean,
+  densityPlotSeparate = list(types = list(), value = ""),
+  descriptivesTableTransposed = TRUE,
+  heatmapHorizontalAxis = list(types = list(), value = ""),
+  heatmapVerticalAxis = list(types = list(), value = ""),
+  kurtosis = TRUE,
+  skewness = TRUE,
+  splitBy = list(types = list(), value = ""))
+
+#HSI metric descriptive statistics
+jaspDescriptives::Descriptives(
+  version = "0.19",
+  formula =  ~ HS1Mean + HS2Mean + Screentime1Mean + Screentime2Mean,
+  densityPlotSeparate = list(types = list(), value = ""),
+  heatmapHorizontalAxis = list(types = list(), value = ""),
+  heatmapVerticalAxis = list(types = list(), value = ""),
+  kurtosis = TRUE,
+  skewness = TRUE,
+  splitBy = list(types = list(), value = ""))
+#rANOVA & descriptive graphs
+jaspAnova::AnovaRepeatedMeasures(
+  version = "0.19",
+  barPlotHorizontalAxis = list(types = list(), value = ""),
+  barPlotSeparatePlots = list(types = list(), value = ""),
+  betweenSubjectFactors = list(types = "nominal", value = "Group"),
+  descriptivePlotHorizontalAxis = list(types = "unknown", value = "Messzeitpunkt"),
+  descriptivePlotSeparateLines = list(types = "nominal", value = "Group"),
+  descriptivePlotSeparatePlot = list(types = list(), value = ""),
+  friedmanBetweenFactor = list(types = list(), value = ""),
+  rainCloudHorizontalAxis = list(types = "unknown", value = "Messzeitpunkt"),
+  rainCloudSeparatePlots = list(types = "nominal", value = "Group"),
+  repeatedMeasuresCells = list("Screentime1Mean", "Screentime2Mean"),
+  repeatedMeasuresFactors = list(list(levels = list("Vorher", "Nachher"), name = "Messzeitpunkt")),
+  simpleMainEffectFactor = list(types = list(), value = ""),
+  simpleMainEffectModeratorFactorOne = list(types = list(), value = ""),
+  simpleMainEffectModeratorFactorTwo = list(types = list(), value = ""))
